@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Task Manager</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="tools">
+          <button id="langBtn" aria-label="Language">ع</button>
+          <button id="themeBtn" aria-label="Dark mode">🌙</button>
+          <button id="botBtn" aria-label="Assistant">🤖</button>
+        </div>
+        <h1 data-t="title"></h1>
+        <p data-t="sub"></p>
+      </header>
+
+      <section id="bot" class="panel">
+        <b data-t="botTitle"></b>
+        <div class="bot-actions" style="margin-top: 10px">
+          <button class="chip" data-act="organize" data-t="organize"></button>
+          <button class="chip" data-act="first" data-t="first"></button>
+          <button class="chip" data-act="tips" data-t="tips"></button>
+        </div>
+        <div class="bubble" id="botOut" data-t="botHello"></div>
+      </section>
+
+      <div class="stats">
+        <div class="stat"><b id="sTotal">0</b><span data-t="total"></span></div>
+        <div class="stat"><b id="sLeft">0</b><span data-t="left"></span></div>
+        <div class="stat"><b id="sDone">0</b><span data-t="done"></span></div>
+      </div>
+
+      <h2 data-t="addTitle"></h2>
+      <div class="panel">
+        <label for="name" data-t="taskName"></label>
+        <input id="name" maxlength="80" />
+        <div class="row">
+          <div>
+            <label for="date" data-t="due"></label>
+            <div class="datebox">
+              <input id="date" readonly autocomplete="off" />
+              <div id="cal" class="cal"></div>
+            </div>
+          </div>
+          <div>
+            <label for="prio" data-t="priority"></label>
+            <select id="prio">
+              <option value="high" data-t="high"></option>
+              <option value="medium" selected data-t="medium"></option>
+              <option value="low" data-t="low"></option>
+            </select>
+          </div>
+        </div>
+        <button class="add" id="addBtn" data-t="add"></button>
+      </div>
+
+      <h2 data-t="myTasks"></h2>
+      <div class="filters">
+        <button class="chip active" data-f="all" data-t="all"></button>
+        <button class="chip" data-f="pending" data-t="pending"></button>
+        <button class="chip" data-f="completed" data-t="completed"></button>
+      </div>
+      <div id="list"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
